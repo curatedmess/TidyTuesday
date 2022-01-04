@@ -76,7 +76,7 @@ data <- bind_rows(strava_df,App_df) %>%
 # plot data ---------------------------------------------------------------
 data %>%
   ggplot(aes(x = distance_miles)) +
-  geom_histogram(bins = 24, fill = "#000000", color = NA, alpha = 0.8) +
+  geom_histogram(bins = 20, fill = "#000000", color = NA) +
   geom_vline(aes(xintercept = mean), col = "#64B5F6") +
   facet_wrap(~ year, nrow = 1) +
   scale_y_continuous(expand = c(0,0)) +
@@ -85,14 +85,14 @@ data %>%
         plot.title = element_text(family = "Red Hat Display", size = 21, hjust = 0.5),
         plot.title.position = "plot",
         plot.caption.position = "plot",
-        plot.subtitle = element_textbox_simple(hjust = 0.5, lineheight = 1.3, padding = margin(10, 30, 10, 30)),
-        strip.text.x = element_text(size = 10, color = "#000000", family = "Red Hat Text", face = "bold"),
+        plot.subtitle = element_textbox_simple(hjust = 0.5, lineheight = 1.3, padding = margin(10, 35, 10, 35)),
+        strip.text.x = element_text(size = 10, color = "#000000", family = "Red Hat Display"),
         plot.caption = element_text(size = 8, hjust = 0.5, margin=margin(5,0,5,0)),
         axis.text = element_text(family = "Red Hat Text", color = "#000000"),
         axis.title.x = element_text(size = 10, family = "Red Hat Text", color = "#000000"),
         axis.title.y = element_text(size = 10, family = "Red Hat Text", color = "#000000"),
         panel.grid = element_line(color = "#d3d3d3"),
-        plot.margin = unit(c(2.25,2.5,2.5,2.25), "cm"),
+        plot.margin = unit(c(2.25,2.25,2.25,2.25), "cm"),
         plot.background = element_rect(color = "#f2f2f2", fill = "#f2f2f2")) +
   labs(title = "RUNNING FARTHER",
       subtitle = "The distribution of my runs by year has shited with an increasing number of runs longer in distance than the <span style = 'color:#64B5F6;'>three-year mean average of 6.06 miles</span>.",
