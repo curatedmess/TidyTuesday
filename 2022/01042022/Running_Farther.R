@@ -101,5 +101,5 @@ data %>%
       y = "Count of Runs")
 
 # save plot
-ggsave(paste0("RUNNING_FARTHER", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 8, height = 6)
+ggsave(paste0("RUNNING_FARTHER_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 8, height = 6)
 
