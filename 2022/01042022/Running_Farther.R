@@ -95,7 +95,7 @@ data %>%
         plot.margin = unit(c(2.25,2.25,2.25,2.25), "cm"),
         plot.background = element_rect(color = "#f2f2f2", fill = "#f2f2f2")) +
   labs(title = "RUNNING FARTHER",
-      subtitle = "The distribution of my runs by year has shited with an increasing number of runs longer in distance than the <span style = 'color:#64B5F6;'>three-year mean average of 6.06 miles</span>.",
+      subtitle = "The distribution of my runs by year has shifted with an increasing number of runs longer in distance than the <span style = 'color:#64B5F6;'>three-year mean average of 6.06 miles</span>.",
       caption = "\n#TidyTuesday | Data: Mostly Strava | Design: Ryan Hart",
       x = "Distance (miles)", 
       y = "Count of Runs")
