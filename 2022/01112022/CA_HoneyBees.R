@@ -56,7 +56,7 @@ df %>%
   labs(title = "California Honey Bee Colonies",
        subtitle = "The yearly average of honey bee colonies <span style = 'color:#ffb101;'><b>surpassed one million in 2021</b></span>.",
        caption = "\n#TidyTuesday | Data: USDA | Design: Ryan Hart",
-       x = "\nUSDA collects survey data quarterly, with the second quarter of 2019 data omitted because of survey suspension.")
+       x = "\nUSDA collects survey data quarterly (2019 Q2 data was not collected).")
 
 # save plot
 ggsave(paste0("CA_HoneyBees_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 8, height = 6)
