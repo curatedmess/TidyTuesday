@@ -103,7 +103,7 @@ box <- box_df %>%
         axis.text.y = element_text(family = "Open Sans", color = "#000000", size = 10),
         axis.text.x = element_text(family = "Open Sans", color = "#000000", size = 10),
         axis.ticks = element_blank()) +
-  labs(subtitle = "The ratings for chocolate bars from the U.S.A. are comparable to the\nRest of the World with a slightly lower mean average.",
+  labs(subtitle = "The ratings for chocolate bars from the U.S.A. are comparable\nto the Rest of the World with a slightly lower mean average.",
        y = "Rating Score\n")
 
 # create patchwork plot ---------------------------------------------------
