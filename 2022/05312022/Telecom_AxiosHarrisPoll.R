@@ -1,5 +1,5 @@
 # TidyTuesday | May 31 2022 - T-Mobile a Notch Above the Rest
-# Data source is Axios Harris Poll 100
+# Data source is 2022 Axios Harris Poll 100
 
 
 # libraries ---------------------------------------------------------------
@@ -50,8 +50,8 @@ ggplot(aes(fill = company, y = score, x = name)) +
         plot.margin = unit(c(2, 2, 2, 2), "cm"),
         plot.background = element_rect(color = "#f2f2f2", fill = "#f2f2f2")) +
   labs(title = "T-Mobile a Notch Above the Rest",
-       subtitle = "How do Americans rate telecoms across seven key dimensions of reputation?",
-       caption = "\n#TidyTuesday | Data: Axios Harris Poll 100 | Design: Ryan Hart",
+       subtitle = "How did Americans rate Telecoms across seven key dimensions of reputation?",
+       caption = "\n#TidyTuesday | Data: 2022 Axios Harris Poll 100 | Design: Ryan Hart",
        y = "Score\n",
        x = "Poll Category\n")
 
