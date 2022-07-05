@@ -43,7 +43,7 @@ df %>%
         plot.margin = unit(c(1.3, 1.3, 1.3, 1.3), "cm"),
         plot.background = element_rect(color = "#f2f2f2", fill = "#f2f2f2")) +
   labs(title = "San Francisco",
-       subtitle = "<span style = 'font-size:10pt;'>Rental Prices on Craigslist Ads<br></span>",
+       subtitle = "<span style = 'font-size:10pt;'>Distribution of Rental Prices on Craigslist Ads<br></span>",
        caption = "\nData: Kate Pennington's Bay Area Craigslist Rental Housing Posts\n\n#TidyTuesday | Design: Ryan Hart",
        x = "\nRental Price (USD)")
 
