@@ -5,6 +5,7 @@
 library(tidytuesdayR)
 library(tidyverse)
 library(showtext)
+library(scales)
 library(scico)
 
 # add font ----------------------------------------------------------------
@@ -18,10 +19,11 @@ showtext_auto()
 palette <- "bamako"
 
 # get data ----------------------------------------------------------------
-frog <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-08-02/frog.csv')
+tuesdata <- tidytuesdayR::tt_load('2022-08-02')
+frogs <- tuesdata$frogs
 
 # create plot -------------------------------------------------------------
-frog %>% 
+frogs %>% 
   ggplot(aes(x = HabType, fill = as.character(Female))) +
   geom_bar(position="fill") +
   scale_y_continuous(expand = c(0,0), labels = label_percent()) +
