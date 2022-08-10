@@ -30,7 +30,7 @@ frogs %>%
   scale_fill_scico_d(palette = palette, labels=c('Male', 'Female')) +
   theme_minimal() +
   theme(text = element_text(size = 8, family = font, color = "#000000"),
-        plot.title = element_text(family = font, size = 30, hjust = 0.5, face = "bold"),
+        plot.title = element_text(family = font, size = 32, hjust = 0.5, face = "bold"),
         plot.title.position = "plot",
         plot.subtitle = element_text(family = font, size = 10, hjust = 0.5, lineheight = 1.1),
         plot.caption = element_text(hjust = 0.5),
