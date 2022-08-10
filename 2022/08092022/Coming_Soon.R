@@ -43,19 +43,19 @@ df %>%
   xlim(c(1.5, 5.5)) +
   coord_polar("y", start = 0, clip = "off") +
   scale_fill_manual(values = c("#682957", "#F0B54D")) +
-  annotate(geom='richtext', x = 1.5, y = 0, size = 3, label = "<b>Cummulative Height</b><br>4,902 feet", family = font, fill = NA, label.color = NA) +
+  annotate(geom='richtext', x = 1.5, y = 0, size = 3, label = "<b>Cumulative Height</b><br>4,902 feet", family = font, fill = NA, label.color = NA) +
   theme_void() +
   theme(text = element_text(size = 9, family = font, color = "#000000"),
-        plot.title = element_text(family = font, size = 20, hjust = 0.5, face = "bold"),
+        plot.title = element_text(family = font, size = 18, hjust = 0.5, face = "bold"),
         plot.title.position = "plot",
-        plot.subtitle = element_text(family = font, size = 10, hjust = 0.5, lineheight = 1.1),
+        plot.subtitle = element_text(family = font, size = 9, hjust = 0.5, lineheight = 1.1),
         plot.caption = element_text(hjust = 0.5),
         legend.position = "top",
         legend.title = element_blank(),
         plot.margin = unit(c(2, 2, 2, 2), "cm"),
         plot.background = element_rect(color = "#f2f2f2", fill = "#f2f2f2")) +
   labs(title = "New Ferris Wheels Coming Soon",
-       subtitle = "As of 2013, the USA has 45 operational Ferris wheels with six new\nplanned, in development or under construction. Once complete the\ncummulative height for all 51 Ferris wheels will explode by 158%!\n",
+       subtitle = "As of 2013, the USA has 45 operational Ferris wheels with six new\nplanned, in development, or under construction. Once complete, the\ncumulative height for all 51 Ferris wheels will explode by 158%!\n",
        caption = "\n#TidyTuesday | Data: @Emil_Hvitfeldt | Design: Ryan Hart")
 
 # save plot ---------------------------------------------------------------
