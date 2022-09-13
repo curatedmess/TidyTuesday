@@ -5,7 +5,6 @@
 # load libraries ---------------------------------------------------------------
 library(tidyverse)
 library(showtext)
-library(imager)
 library(ggtext)
 
 
