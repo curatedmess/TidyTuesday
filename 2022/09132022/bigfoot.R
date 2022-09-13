@@ -40,8 +40,8 @@ df %>%
   geom_point(aes(color = ifelse(season == "Winter", "Winter", "Other Seasons")), size = 0.1) +
   scale_x_continuous(expand = c(0, 0), limits = c(NA, 1.5)) +
   scale_color_manual(values = c("#BCAAA4", "#448AFF")) +
-  annotate(geom = "text", y = 0.85, x = 0.9, label = "BIG FOOT", hjust = "left", family = font, fontface = "bold", size = 10, color = "#000000") +
-  annotate(geom = "richtext", y = 0.74, x = 0.89, label = "<span style='color: #448AFF;'><b>Winter</b></span> accounts for the least<br>number of big foot sightings<br>in the U.S. at 15% of the total.", hjust = "left", family = font2, size = 3, color = "#000000", fill = NA, label.color = NA) +
+  annotate(geom = "text", y = 0.85, x = 0.9, label = "BIGFOOT", hjust = "left", family = font, fontface = "bold", size = 10, color = "#000000") +
+  annotate(geom = "richtext", y = 0.74, x = 0.89, label = "<span style='color: #448AFF;'><b>Winter</b></span> accounts for the least<br>number of bigfoot sightings<br>in the U.S. at 15% of the total.", hjust = "left", family = font2, size = 3, color = "#000000", fill = NA, label.color = NA) +
   annotate(geom = "text", y = 0.25, x = 1, label = "Each point represents one of the 4,929\nbigfoot sightings with season level detail.", hjust = "left", family = font2, size = 2, color = "#000000") +
   annotate(geom = "curve", x = 1, y = 0.29, xend = 0.90, yend = 0.32,curvature = 0.25, size = 0.3,  arrow = arrow(length = unit(1.5, "mm")), color = "#000000") +
   theme_void() +
