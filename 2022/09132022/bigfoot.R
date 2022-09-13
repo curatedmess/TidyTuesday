@@ -50,7 +50,7 @@ df %>%
         legend.title = element_blank(),
         plot.margin = unit(c(1.75, 1.75, 1.75, 1.75), "cm"),
         plot.background = element_rect(color = "#F2F2F2", fill = "#F2F2F2")) +
-  labs(caption = "\n#TidyTuesday | Data: BFRO by way of data.world | Design: Ryan Hart")
+  labs(caption = "\n#TidyTuesday | Data: Bigfoot Field Researchers Organization | Design: Ryan Hart")
 
 
 # save plot ---------------------------------------------------------------
