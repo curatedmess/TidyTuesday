@@ -22,6 +22,8 @@ font2 <- "Open Sans"
 # unable to pull file from #tidytuesday, so pulled file from data.world
 bigfoot <- readr::read_csv('bfro_reports_geocoded.csv')
 
+# to create xy points for the image I used https://apps.automeris.io/wpd/
+# this tool allows you to load an image and create xy points
 pic_points <- readr::read_csv('bigfoot_points.csv')
 
 
