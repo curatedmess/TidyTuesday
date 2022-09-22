@@ -62,7 +62,7 @@ df %>%
         plot.margin = unit(c(1.3, 1.3, 1.3, 1.3), "cm"),
         plot.background = element_rect(color = "#F2F2F2", fill = "#F2F2F2")) +
   labs(title = "Wastewater Treatment Plants",
-       subtitle = "By the three levels, the distribution of the estimated populations\nserved (greater than one million) from 239 wastewater treatment\nplants globally.\n",
+       subtitle = "By the three levels, the distribution of the estimated population\nserved (greater than one million) from 239 wastewater treatment\nplants globally.\n",
        caption = "\n#TidyTuesday | Data:  Macedo et al, 2022 by way of Data is Plural | Design: Ryan Hart",
        x = "\nEstimated Population Served\n")
 
