@@ -24,13 +24,13 @@ df <- artists %>%
   select(race2, type, artists_n) %>% 
   group_by(type, race2) %>% 
   summarise(n = sum(artists_n, na.rm = TRUE)) %>%
-  mutate(perc = round(n / sum(n), 2))
+  mutate(perc = round(n / sum(n), 3))
 
 # create plot -------------------------------------------------------------
 df %>%
   ggplot(aes(y = reorder(type, desc(type)), x = perc, fill = race2)) +
   geom_col(position="dodge2") +
-  geom_text(aes(label = percent(perc)), color = "#000000", size = 2.5, family = font, position = position_dodge2(width = 0.9), hjust = 1.25) +
+  geom_text(aes(label = paste(round(perc*100 , digits = 1),"%",sep="")), color = "#000000", size = 2.5, family = font, position = position_dodge2(width = 0.9), hjust = 1.10) +
   geom_vline(xintercept = 0.18, linetype = "dotted", size = 0.8, color = "#000000") +
   annotate("text", x = 0.19, y = "Writers And Authors", label = "\nHispanics are 18% of total U.S. population", color = "#000000", size = 3, family = font, fontface = "bold", hjust = "left", vjust = "top") +
   scale_fill_manual(values = c("#f0932b", "#95afc0")) +
