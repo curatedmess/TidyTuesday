@@ -47,8 +47,8 @@ graticules <- st_graticule(lat = seq(-80, 80, 10), lon = seq(-180, 180, 10)) %>%
 
 # create plot -------------------------------------------------------------
 ggplot() +
-  geom_sf(data = map, size = 0.1, color = "#28282B") +
   geom_sf(data = graticules$geometry, size = 0.1, color = "#7B7B7C") +
+  geom_sf(data = map, size = 0.1, color = "#28282B") +
   geom_sf(data = host_points_sf, size = 1, aes(color = ifelse(year == 2002, "yes", "no"))) +
   scale_color_manual(values = c("#28282B", "#e84393")) +
   coord_sf() +
