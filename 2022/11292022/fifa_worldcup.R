@@ -50,10 +50,10 @@ ggplot() +
   geom_sf(data = map, size = 0.1, color = "#28282B") +
   geom_sf(data = graticules$geometry, size = 0.1, color = "#7B7B7C") +
   geom_sf(data = host_points_sf, size = 1, aes(color = ifelse(year == 2002, "yes", "no"))) +
-  scale_color_manual(values = c("#28282B", "#ff4757")) +
+  scale_color_manual(values = c("#28282B", "#e84393")) +
   coord_sf() +
   theme_void() +
-  theme(plot.title = element_text(family = font, size = 18, hjust = 0.5, color = "#28282B"),
+  theme(plot.title = element_text(family = font, size = 20, hjust = 0.5, color = "#28282B"),
         plot.title.position = "plot",
         plot.subtitle = element_markdown(family = font, size = 8, hjust = 0.5, color = "#28282B", lineheight = 1.3),
         plot.caption = element_text(family = font, hjust = 0.5, size = 8, color = "#28282B"),
@@ -62,8 +62,8 @@ ggplot() +
         plot.margin = margin(0, 0, 0, 0,"cm"),
         plot.background = element_rect(color = NA, fill = "#F2F2F2"),
         panel.background = element_rect(color = NA, fill = "#F2F2F2")) +
-  labs(title = "FIFA World Cup Host Nations",
-       subtitle = "Seventeen countries have hosted the World Cup tournament<br>between 1930 - 2018, with <span style='color:#ff4757;'>2002</span> being the only time two<br>countries (Japan & South Korea) co-hosted the tournament.<br>",
+  labs(title = "FIFA WORLD CUP",
+       subtitle = "Seventeen countries have hosted the World Cup tournament<br>between 1930 and 2018, with <span style='color:#e84393;'><b>2002</b></span> being the only time two<br>countries (Japan & South Korea) co-hosted the tournament.<br>",
        caption = "\n\n#TidyTuesday | Data: FIFA World Cup | Design: Ryan Hart")
 
 # save plot ---------------------------------------------------------------
