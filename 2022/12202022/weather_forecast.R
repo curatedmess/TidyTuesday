@@ -67,7 +67,6 @@ df %>%
        plot.background = element_rect(color = NA, fill = "#F2F2F2"),
        panel.background = element_rect(color = NA, fill = "#F2F2F2")) +
   labs(title = "FORECASTING THE WEATHER",
-      #title = "THE <span style='color:#cf6a87;'>HIGHS</span> AND <span style='color:#546de5;'>LOWS</span>",
        subtitle = "How often are the 12-hour predicted and observed temperatures\ndifferent, and by how many degrees? (6/1/2021 to 5/31/2022)\n",
        x = "\nDifference between Predicted and Observed Temperature (°F)",
        y = "Number of Observations\n",
