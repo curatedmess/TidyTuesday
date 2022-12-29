@@ -6,8 +6,8 @@ library(tidyverse)
 library(tidytuesdayR)
 library(showtext)
 library(geomtextpath)
-#library(ggtext)
-library(trekcolors)
+
+
 
 # add font ----------------------------------------------------------------
 font_add_google(name = "Antonio", family = "Antonio")
@@ -70,5 +70,5 @@ ggplot() +
 
 
 # save plot ---------------------------------------------------------------
-ggsave(paste0("star_trek_timeline", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 8, height = 8)
+ggsave(paste0("star_trek_timeline_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 8, height = 8)
 
