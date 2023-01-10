@@ -75,6 +75,7 @@ df_final %>%
   coord_map(clip = "off") +
   geom_text(aes(x = x, y = y, label = id, color = count <= 70), family = font1, size = 3, show.legend = FALSE) +
   scale_color_manual(values = c("#FFFFFF", "#000000")) +
+  scale_y_continuous(limits = c(25, 57)) +
   #annotate(geom = "text", x = -104, y = 54, label = "331 unique species of birds observed, which is less\nthan half of the potential bird species found in the U.S.", hjust = "center", family = font2, size = 3, color = "#000000") +
   annotate(geom = "text", x = -136, y = 37, label = "6 bird\nspecies", hjust = "left", family = font2, size = 3, color = "#000000") +
   annotate(geom = "segment", x = -136, y = 35, xend = -136, yend = 33, size = 0.4,  arrow = arrow(length = unit(1.5, "mm")), color = "#000000") +
@@ -86,7 +87,7 @@ df_final %>%
         plot.subtitle = element_text(family = font1, size = 11, hjust = 0.5, lineheight = 1.1),
         plot.caption.position = "plot",
         plot.caption = element_text(size = 9, family = font1, color = "#000000", hjust = 0.5),
-        legend.position = c(0.5, 0.95),
+        legend.position = c(0.5, 0.85),
         legend.direction = "horizontal",
         legend.title = element_blank(),
         legend.text = element_text(size = 8, family = font1, color = "#000000"),
