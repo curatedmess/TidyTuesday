@@ -92,7 +92,7 @@ df_final %>%
         legend.text = element_text(size = 8, family = font1, color = "#000000"),
         legend.key.height = unit(0.25, 'cm'),
         legend.key.width = unit(1.25, 'cm'),
-        plot.margin = unit(c(0.5, 0, 0.5, 0), "cm"),
+        plot.margin = unit(c(0, 0.25, 0, 0.25), "cm"),
         plot.background = element_rect(color = "#FFFFFF", fill = "#FFFFFF")) +
   labs(title = "BIRD SPECIES",
        subtitle = "The total number of unique bird species observed by volunteers\nin 2021 by state (and DC) as a part of the FeederWatch Program.\n",
