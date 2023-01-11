@@ -39,7 +39,7 @@ df <- feederwatch %>%
 
 # total
 df_total <- feederwatch %>% 
-  #filter(Year == 2021) %>% 
+  filter(Year == 2021) %>% 
   filter(grepl("US-", subnational1_code)) %>% 
   summarise(count = n_distinct(species_code)) 
   
