@@ -33,7 +33,7 @@ align <- ifelse(df$name == "Average", 0, 1)
 # create plot -------------------------------------------------------------
 df %>% 
   ggplot(aes(y = as.character(edition_number), x = value)) +
-  geom_line(aes(group = edition_number), size = 2, color = "#022658") +
+  geom_line(aes(group = edition_number), size = 3, color = "#022658") +
   geom_text(aes(label = name), nudge_y = 0.3, size = 2, color = "#888888", hjust = align, family = font) +
   scale_x_continuous() +
   theme_minimal() +
