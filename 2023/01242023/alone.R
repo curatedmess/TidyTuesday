@@ -1,5 +1,5 @@
 # TidyTuesday | January 24, 2023 | Alone
-# Data Source is {Alone} by Dan Oehm
+# Data Source is {Alone} data package by @danoehm
 
 # load libraries ---------------------------------------------------------------
 library(tidyverse)
