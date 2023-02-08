@@ -49,7 +49,7 @@ cumulative_returns %>%
   geom_hline(yintercept = 0, linewidth = 0.3, color = "#000000") +
   geom_line(aes(color = stock_symbol), linewidth = 1) +
   geom_text(aes(label = stock_symbol, color = stock_symbol), data = . %>% filter(date == max(date)), size = 2.5, hjust = 0, nudge_x = 0.5, family = font) +
-  scale_color_manual(values = c("#9caec5", "#32a1c9", "#b53f3c",  "#153f6a")) +
+  scale_color_manual(values = c("#32a1c9", "#b53f3c",  "#153f6a")) +
   scale_y_continuous(labels = scales::percent_format(scale = 1, big.mark = ","), breaks = seq(0, 25000, by = 5000)) +
   scale_x_date(breaks = seq(as.Date("2010-01-01"), as.Date("2022-12-31"), by = "24 months"), date_labels = "%Y") +
   coord_cartesian(clip = "off") +
