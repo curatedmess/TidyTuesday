@@ -74,4 +74,4 @@ cumulative_returns %>%
        x = "\nData shows cumulative return on a monthly basis through market close on June 30, 2022.")
 
 # save plot ---------------------------------------------------------------
-ggsave(paste0("stocks_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 6, height = 6)
+ggsave(paste0("tesla_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 6, height = 6)
