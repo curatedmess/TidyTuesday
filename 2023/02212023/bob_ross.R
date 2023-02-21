@@ -43,7 +43,7 @@ df %>%
   geom_tile() +
   scale_fill_identity() + 
   theme_void() +
-  theme(plot.title = element_text(family = font, size = 28, hjust = 0.5, face = "bold", color = "#000000"),
+  theme(plot.title = element_text(family = font, size = 30, hjust = 0.5, face = "bold", color = "#000000"),
         plot.title.position = "plot",
         plot.subtitle = element_text(family = font, size = 10, hjust = 0.5, color = "#000000"),
         plot.caption.position = "plot",
