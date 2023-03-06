@@ -30,7 +30,7 @@ df <- afrisenti %>%
   # filter(intended_use == "test") %>%
   group_by(language) %>%
   mutate(n = n()) %>%
-  filter(n >= 5000) %>% 
+  #filter(n >= 5000) %>% 
   ungroup() %>% 
   group_by(language, label) %>%
   summarize(value = n()) %>% 
@@ -41,21 +41,21 @@ df <- afrisenti %>%
 # create plot -------------------------------------------------------------
 df %>% 
   ggplot(aes(x = percent, y = fct_reorder(language, total_tweets, .desc = FALSE), fill = label)) +
-  geom_bar(stat = "identity", position = "stack", width = 0.65) +
-  geom_text(aes(label = paste(language, " - ", total_tweets, "tweets"), x = 0.50), nudge_y = 0.45,   size = 3, color = "#000000", family = font) +
+  geom_bar(stat = "identity", position = "stack", width = 0.5) +
+  geom_text(aes(label = paste(language, " - ", total_tweets, "tweets"), x = 0.50), nudge_y = 0.5,   size = 3, color = "#000000", family = font) +
   geom_text(aes(label = if_else(percent > 0.05, paste0(scales::percent(percent, accuracy = 0.1L)), NULL)), position = position_fill(vjust = 0.5), size = 3, color = "#000000", family = font) +
   scale_fill_manual(values = c("#cb4f46", "#dfbd53", "#557a67")) +
   theme_void() +
-  theme(plot.title = element_text(family = font, size = 28, hjust = 0.5, face = "bold", color = "#000000"),
+  theme(plot.title = element_text(family = font, size = 26.5, hjust = 0.5, face = "bold", color = "#000000"),
         plot.title.position = "plot",
-        plot.subtitle = element_markdown(family = font, size = 11, hjust = 0.5, color = "#000000", lineheight = 1.1),
+        plot.subtitle = element_markdown(family = font, size = 10, hjust = 0.5, color = "#000000", lineheight = 1.1),
         plot.caption.position = "plot",
         plot.caption = element_text(size = 8, family = font, color = "#000000", hjust = 0.5),
         legend.position = "none",
         plot.margin = unit(c(1, 1, 1, 1), "cm"),
         plot.background = element_rect(color = NA, fill = "#F2F2F2")) +
-  labs(title = "SENTIMENT",
-       subtitle = "<br>Percent of tweets by <span style='color:#557a67;'>positive</span>, <span style='color:#cb4f46;'>negative</span> and <span style='color:#dfbd53;'>neutral</span><br>sentiment for African languages with > 5000 tweets<br>",
+  labs(title = "AFRICAN LANGUAGE TWEETS",
+       subtitle = "Percent of tweets by <span style='color:#557a67;'><b>positive</b></span>, <span style='color:#dfbd53;'><b>neutral</b></span> and <span style='color:#cb4f46;'><b>negative</b></span> sentiment<br>",
        caption = "\n#TidyTuesday | Data: AfriSenti via @shmuhammad2004 | Design: Ryan Hart")
 
 # save plot ---------------------------------------------------------------
