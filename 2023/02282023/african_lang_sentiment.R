@@ -23,14 +23,14 @@ languages <- tuesdata$languages
 # language_scripts <- tuesdata$language_scripts
 # language_countries <- tuesdata$language_countries
 # country_regions <- tuesdata$country_regions
-
+  
 # wrangle and create df ---------------------------------------------------
 df <- afrisenti %>% 
   left_join(languages) %>% 
-  filter(intended_use == "dev") %>% 
+  # filter(intended_use == "test") %>%
   group_by(language) %>%
   mutate(n = n()) %>%
-  filter(n >= 500) %>% 
+  filter(n >= 5000) %>% 
   ungroup() %>% 
   group_by(language, label) %>%
   summarize(value = n()) %>% 
@@ -55,7 +55,7 @@ df %>%
         plot.margin = unit(c(1, 1, 1, 1), "cm"),
         plot.background = element_rect(color = NA, fill = "#F2F2F2")) +
   labs(title = "SENTIMENT",
-       subtitle = "<br>Percent of tweets by <span style='color:#557a67;'>positive</span>, <span style='color:#cb4f46;'>negative</span> and <span style='color:#dfbd53;'>neutral</span><br>sentiment for African languages with > 500 tweets<br>",
+       subtitle = "<br>Percent of tweets by <span style='color:#557a67;'>positive</span>, <span style='color:#cb4f46;'>negative</span> and <span style='color:#dfbd53;'>neutral</span><br>sentiment for African languages with > 5000 tweets<br>",
        caption = "\n#TidyTuesday | Data: AfriSenti via @shmuhammad2004 | Design: Ryan Hart")
 
 # save plot ---------------------------------------------------------------
