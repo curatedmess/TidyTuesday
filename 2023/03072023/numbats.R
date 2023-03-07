@@ -37,7 +37,7 @@ df %>%
   geom_bar(stat = "identity", position = "stack") +
   annotate("text", x = 2001, y = 80, size = 5, color = "#F2F2F2", hjust = "left", label = "82.9%") +
   annotate("segment", x = 2001, xend = 2005, y = 74, yend = 74, size = 0.4, color = "#F2F2F2") +
-  annotate("text", x = 2001, y = 66, size = 2.5, color = "#F2F2F2", hjust = "left", label = "Combined contribution\nof two data partners") +
+  annotate("text", x = 2001, y = 66, size = 2.5, color = "#F2F2F2", hjust = "left", label = "Combined contribution\nby two data partners") +
   scale_fill_scico_d(palette = "hawaii") +
   scale_y_continuous(expand = c(0, 0)) +
   scale_x_continuous(breaks = c(2000, 2013, 2023)) +
