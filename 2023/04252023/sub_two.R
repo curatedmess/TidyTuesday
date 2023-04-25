@@ -74,6 +74,7 @@ axis_df <- data.frame(Seconds = c(7200, 7300, 7400, 7500, 7600, 7700, 7800)) %>%
 df_final %>% 
   ggplot(aes(x = Year, y = Seconds)) +
   geom_line(aes(group = Category, color = Status), linewidth = 0.7) +
+  geom_point(aes(group = Category, color = Status), size = 0.4) +
   scale_color_manual(values = c("#E040FB", "#000000")) +
   scale_x_continuous(breaks = seq(1990, 2045, by = 5)) +
   scale_y_continuous(breaks = seq(7200, 7800, by = 100), labels = c("02:00:00", "02:01:40", "02:03:20", "02:05:00", "02:06:40", "02:08:20", "02:10:00")) +
