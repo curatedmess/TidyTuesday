@@ -34,7 +34,7 @@ df %>%
   ggplot(aes(x = year, y = commonname)) +
   geom_line(linewidth = 0.3) +
   geom_point(aes(size = n), alpha = 0.5) + 
-  scale_size_continuous(breaks = c(1, 300, 700)) +
+  scale_size_continuous(breaks = c(min(df$n), 300, max(df$n))) +
   scale_y_discrete(limits = rev) +
   scale_x_continuous(breaks = seq(1978, 2022, by = 22)) +
   coord_cartesian(clip = "off") +
