@@ -7,6 +7,7 @@ library(tidytuesdayR)
 library(janitor)
 library(showtext)
 library(ggtext)
+library(scico)
 
 # add font ----------------------------------------------------------------
 font_add_google(name = "Anton", family = "Anton")
