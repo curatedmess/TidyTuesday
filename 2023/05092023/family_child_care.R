@@ -51,7 +51,7 @@ df %>%
   ggplot() +
   geom_rect(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = count), color = NA) +
   geom_text(aes(x = xmax - 1, ymax - 1.75, label = paste(group, " for ", count, " counties"), color = ifelse(count < 1000, "black", "white")), family = font_t, size = 3, hjust = 1) +
-  annotate(geom = "text", x = 43, y = 35, label = "St. Louis, MO\nleads with a\n117% increase", hjust = "left", vjust = "top", family = font, size = 2, color = "#000000", fontface = "bold") +
+  annotate(geom = "text", x = 47, y = 35, label = "St. Louis, MO\nlead with a\n117% increase", hjust = "center", vjust = "top", family = font, size = 2, color = "#000000", fontface = "bold") +
   annotate(geom = "curve", x = 47, y = 36, xend = 43, yend = 40, linewidth = 0.3,  curvature = 0.5, arrow = arrow(length = unit(1.25, "mm")), color = "#000000") +
   scale_color_identity() +
   scale_fill_scico(palette = "grayC") +
