@@ -1,0 +1,75 @@
+# #TidyTuesday | 2023-05-09 | Childcare Costs
+# Data Source is National Database of Childcare Prices
+
+# load libraries ---------------------------------------------------------------
+library(tidyverse)
+library(tidytuesdayR)
+library(janitor)
+library(showtext)
+library(ggtext)
+
+# add font ----------------------------------------------------------------
+font_add_google(name = "Anton", family = "Anton")
+font_add_google(name = "Inter", family = "Inter")
+font_t <- "Anton"
+font <- "Inter"
+
+# turn on showtext --------------------------------------------------------
+showtext_auto()
+showtext_opts(dpi = 320)
+
+options(scipen = 999)
+
+# load data ---------------------------------------------------------------
+childcare_costs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')
+counties <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')
+
+# create df ---------------------------------------------------------------
+df <- childcare_costs %>% 
+  filter(study_year > 2014) %>% 
+  select(study_year, county_fips_code, mfccsa) %>%
+  na.omit() %>% 
+  pivot_longer(cols =c ("mfccsa"), names_to = 'name', values_to = 'value') %>% 
+  group_by(county_fips_code, name) %>% 
+  mutate(change = value[which.max(study_year)] - value[which.min(study_year)]) %>% 
+  # mutate(perc_change = round((value[which.max(study_year)] -  value[which.min(study_year)])/ value[which.min(study_year)], 2) * 100) %>% 
+  group_by(county_fips_code) %>% 
+  summarise(max = max(change)) %>%
+  mutate(group = case_when(max == 0 ~ "Remained the same",
+                           max < 0 ~ "Declined",
+                           max > 0 ~ "Increased")) %>% 
+  group_by(group) %>% 
+  summarise(count = n()) %>% 
+  mutate(ymax = sqrt(count),
+         xmax = sqrt(count),
+         xmin = 0,
+         ymin = 0)
+  
+# create plot -------------------------------------------------------------
+df %>% 
+  arrange(desc(count)) %>% 
+  ggplot() +
+  geom_rect(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = count), color = NA) +
+  geom_text(aes(x = xmax - 1, ymax - 1.75, label = paste(group, " for ", count, " counties"), color = ifelse(count < 1000, "black", "white")), family = font_t, size = 3, hjust = 1) +
+  annotate(geom = "text", x = 43, y = 35, label = "St. Louis, MO\nleads with a\n117% increase", hjust = "left", vjust = "top", family = font, size = 2, color = "#000000", fontface = "bold") +
+  annotate(geom = "curve", x = 47, y = 36, xend = 43, yend = 40, linewidth = 0.3,  curvature = 0.5, arrow = arrow(length = unit(1.25, "mm")), color = "#000000") +
+  scale_color_identity() +
+  scale_fill_scico(palette = "grayC") +
+  scale_x_continuous(limits = c(min(df$xmin) - 8, max(df$xmax) + 8)) +
+  coord_equal() +
+  theme_void() +
+  theme(plot.title = element_text(family = font_t, size = 36, hjust = 0.5, color = "#000000", face = "bold"),
+        plot.title.position = "plot",
+        plot.subtitle = element_markdown(family = font, size = 10.5, hjust = 0.5, color = "#000000", margin = margin(t = 5, b = 25), lineheight = 1.05),
+        plot.caption.position = "plot",
+        plot.caption = element_text(size = 7.5, family = font, color = "#000000", hjust = 0.5, margin = margin(t = 25)),
+        legend.position = "none",
+        plot.margin = unit(c(1, 1, 1, 1), "cm"),
+        plot.background = element_rect(color = NA, fill = "#feb3e2")) +
+  labs(title = "FAMILY CHILD CARE COST",
+       subtitle = "What happened to the median price for full-time family child care<br>in the United States from 2014 to 2018? <span style='font-size:8pt'>(Price detail at the county level)</span>",
+       caption = "#TidyTuesday | Data: National Database of Childcare Prices | Design: Ryan Hart")
+
+# save plot ---------------------------------------------------------------
+ggsave(paste0("family_child_care_", format(Sys.time(), "%d%m%Y"), ".png"), dpi = 320, width = 6, height = 6)
+
