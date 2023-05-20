@@ -39,7 +39,7 @@ df <- tornados %>%
 # create plot -------------------------------------------------------------
 df %>%
   ggplot(aes(x = time, y = state)) + 
-  geom_density_ridges2(scale = 2, color = "#FFFFFF", fill = "#6D214F") +
+  geom_density_ridges2(scale = 2, color = "#FFFFFF", fill = "#b33939") +
   # geom_vline(xintercept = as.POSIXct(strptime(c("17:00"), format = "%H:%M", tz = "GMT"))) +
   scale_x_datetime(expand = c(0, 0), breaks = as.POSIXct(strptime(c("0:00", "3:00", "6:00", "9:00", "12:00", "15:00", "18:00", "21:00","23:59"), format = "%H:%M", tz = "America/Chicago")), date_labels = ("%I %p")) +
   coord_cartesian(clip = "off") +
