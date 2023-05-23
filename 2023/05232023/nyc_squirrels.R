@@ -6,7 +6,6 @@ library(tidyverse)
 library(tidytuesdayR)
 library(showtext)
 library(janitor)
-library(waffle)
 
 # add font ----------------------------------------------------------------
 font_add_google(name = "Oswald", family = "Oswald")
