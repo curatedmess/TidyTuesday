@@ -60,7 +60,7 @@ df %>%
         panel.background = element_rect(color = NA, fill = "#FFFFFF"),
         plot.background = element_rect(color = NA, fill = "#FFFFFF")) +
   labs(title = "What are the squirrels up to?",
-       subtitle = "Observations count for squirrel behaviors by volunteers in NYC's Central Park.",
+       subtitle = "Observational counts of squirrel behaviors by volunteers in NYC's Central Park.",
        caption = "#TidyTuesday | Data: 2018 Central Park Squirrel Census | Design: Ryan Hart")
 
 # save plot ---------------------------------------------------------------
