@@ -52,7 +52,7 @@ df %>%
         plot.caption.position = "plot",
         plot.caption = element_text(size = 9, family = font, color = "#000000", hjust = 0.5, margin = margin(t = 25)),
         legend.position = "none",
-        axis.text.y = element_text(size = 10, family = font_t, color = "#000000", hjust = 0.5, margin = margin(l = 5)),
+        axis.text.y = element_text(size = 10, family = font_t, color = "#000000", hjust = 1, margin = margin(l = 5)),
         # axis.text.x = element_text(size = 8, family = font, color = "#000000", hjust = 0.5, margin = margin(t = 10)),
         # panel.grid.major.x = element_line(color = "#E0E0E0", linewidth = 0.4),
         axis.title.y = element_blank(),
