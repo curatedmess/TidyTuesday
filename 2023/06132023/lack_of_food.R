@@ -5,7 +5,6 @@
 library(tidyverse)
 library(showtext)
 library(stringr)
-library(xkcd)
 
 # add font ----------------------------------------------------------------
 font_add_google(name = "Oswald", family = "Oswald")
@@ -45,13 +44,13 @@ df %>%
   scale_y_continuous(expand = c(0, 0), limits = c(NA, 80)) +
   scale_x_discrete(limits = month.abb) +
   scale_fill_manual(values = c("#227093", "#b33939")) +
-  annotate("text", x = "May", y = 55, label = "80% of reported cases of\nlack of food occur during months\nin the Hot and Humid Season", family = font, size = 3.5, hjust = 0.5) +
+  annotate("text", x = "May", y = 55, label = "79.6% of reported cases of\nlack of food occur during months\nin the Hot and Humid Season", family = font, size = 3.5, hjust = 0.5) +
   theme_void() +
-  theme(plot.title = element_text(family = font_t, size = 30, hjust = 0.5, face = "bold", color = "#000000", margin = margin(b = 5)),
+  theme(plot.title = element_text(family = font_t, size = 30, hjust = 0, face = "bold", color = "#000000", margin = margin(b = 5)),
         plot.title.position = "plot",
-        plot.subtitle = element_text(family = font, size = 10, hjust = 0.5, color = "#000000", lineheight = 1.2, margin = margin(b = 20)),
+        plot.subtitle = element_text(family = font, size = 10, hjust = 0, color = "#000000", lineheight = 1.2, margin = margin(b = 20)),
         plot.caption.position = "plot",
-        plot.caption = element_text(size = 9, family = font, color = "#000000", hjust = 0.5, margin = margin(t = 50)),
+        plot.caption = element_text(size = 9, family = font, color = "#000000", hjust = 0.5, margin = margin(t = 30)),
         legend.position = "top",
         legend.title = element_blank(),
         legend.text = element_text(size = 8, family = font, color = "#000000"),
@@ -60,7 +59,7 @@ df %>%
         panel.background = element_rect(color = NA, fill = "#FFFFFF"),
         plot.background = element_rect(color = NA, fill = "#FFFFFF")) +
   labs(title = "LACK OF FOOD",
-       subtitle = "Monthly household counts from three Mozambican villages experiencing\nfood insufficiency. This data represents a subset of the survey information\ncollected from the Studying African Farmer-Led Irrigation (SAFI) project.",
+       subtitle = "Monthly household counts by season from three Mozambican villages experiencing\nfood insufficiency. This data represents a subset of the survey information collected\nfrom the Studying African Farmer-Led Irrigation (SAFI) project.",
        caption = "#TidyTuesday | Data: SAFI project | Design: Ryan Hart")
 
 
