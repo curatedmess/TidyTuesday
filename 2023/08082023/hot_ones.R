@@ -38,12 +38,13 @@ df_sauces <- sauces %>%
 # create plot -------------------------------------------------------------
 df_sauces %>%
   ggplot(aes(y = sos, x = season)) +
+  geom_line(aes(group = sauce_number), color = "#DDDDDD") +
   geom_line(data = df_sauces %>% filter(sauce_number == 2), color = "#ff3a22") +
-  geom_point(aes(group = season), size = 1.3, alpha = 0.6) +
+  geom_point(data = df_sauces %>% filter(sauce_number == 2), size = 1.3, color = "#ff3a22") +
   geom_text(aes(x = 10, y = 400, label = "Hot Ones"), family = font_t, size = 9, hjust = 0) +
   geom_richtext(aes(x = 9.75, y = 340, label = "The wing sauces and their heat levels saw the<br>wildest changes in the show's early seasons.<br>Notably, the <span style='color: #ff3a22;'>path for sauce #2</span> swung from an<br>81.7% drop in Scoville scale in season 5 to a<br>scorching 627.3% spike in season 6."), family = font, size = 3, hjust = 0, vjust = "top", fill = NA, label.color = NA, lineheight = 1.3) +
-  geom_text(data = df_sauces %>% filter(sauce_number == 2, season == 6), aes(label = paste0(sauce_name, " @ ", scoville, " Scovilles")), family = font, size = 2, nudge_x = 0.5, hjust = 0) +
-  geom_text(data = df_sauces %>% filter(sauce_number == 2, season == 5), aes(label = paste0(sauce_name, " @ ", scoville, " Scovilles")), family = font, size = 2, nudge_x = 0.5, hjust = 0) +
+  geom_text(data = df_sauces %>% filter(sauce_number == 2, season == 6), aes(label = paste0(sauce_name, " @ ", scoville, " Scovilles")), family = font, size = 2.25, nudge_x = 0.5, hjust = 0, color = "#ff3a22") +
+  geom_text(data = df_sauces %>% filter(sauce_number == 2, season == 5), aes(label = paste0(sauce_name, " @ ", scoville, " Scovilles")), family = font, size = 2.25, nudge_x = 0.5, hjust = 0, color = "#ff3a22") +
   scale_color_identity() +
   scale_y_continuous(limits = c(-100, 650), breaks = c(-100, 0, 100, 200, 300, 400, 500, 600), labels = scales::percent_format(scale = 1)) +
   scale_x_continuous(breaks = c(1:21)) +
