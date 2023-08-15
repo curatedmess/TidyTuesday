@@ -41,8 +41,8 @@ df_sauces %>%
   geom_line(aes(group = sauce_number), color = "#DDDDDD") +
   geom_line(data = df_sauces %>% filter(sauce_number == 2), color = "#ff3a22") +
   geom_point(data = df_sauces %>% filter(sauce_number == 2), size = 1.3, color = "#ff3a22") +
-  geom_text(aes(x = 10, y = 400, label = "Hot Ones"), family = font_t, size = 9, hjust = 0) +
-  geom_richtext(aes(x = 9.75, y = 340, label = "The wing sauces and their heat levels saw the<br>wildest changes in the show's early seasons.<br>Notably, the <span style='color: #ff3a22;'>path for sauce #2</span> swung from an<br>81.7% drop in Scoville scale in season 5 to a<br>scorching 627.3% spike in season 6."), family = font, size = 3, hjust = 0, vjust = "top", fill = NA, label.color = NA, lineheight = 1.3) +
+  geom_text(aes(x = 9, y = 400, label = "Hot Ones"), family = font_t, size = 9, hjust = 0) +
+  geom_richtext(aes(x = 8.75, y = 340, label = "Early in the series, the ten chicken wings' Scoville<br>heat levels shifted dramatically between seasons.<br>Notably, the <span style='color: #ff3a22;'>path for sauce #2</span> went from an 81.7%<br>decrease in season 5 to a blazing 627.3% increase<br>in season 6."), family = font, size = 3, hjust = 0, vjust = "top", fill = NA, label.color = NA, lineheight = 1.3) +
   geom_text(data = df_sauces %>% filter(sauce_number == 2, season == 6), aes(label = paste0(sauce_name, " @ ", scoville, " Scovilles")), family = font, size = 2.25, nudge_x = 0.5, hjust = 0, color = "#ff3a22") +
   geom_text(data = df_sauces %>% filter(sauce_number == 2, season == 5), aes(label = paste0(sauce_name, " @ ", scoville, " Scovilles")), family = font, size = 2.25, nudge_x = 0.5, hjust = 0, color = "#ff3a22") +
   scale_color_identity() +
