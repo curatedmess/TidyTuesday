@@ -32,7 +32,7 @@ df <- spam %>%
   filter(dollar != 0) %>% 
   select(dollar, yesno) %>%
   group_by(yesno) %>% 
-  summarise(n())
+  summarise(total = n())
 
 # create a grid based on the total number of points -----------------------
 num_points_side <- sqrt(1400)
