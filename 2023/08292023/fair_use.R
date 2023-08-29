@@ -53,7 +53,7 @@ df$jurisdiction[df$jurisdiction == "District of Columbia Circuit"] <- "District 
 df %>% 
   arrange(desc(count)) %>% 
   ggplot(aes(fill = outcome, values = count)) +
-  geom_waffle(color = "#D3D3D3", sixe = 0.1, n_rows = 10, flip = TRUE, na.rm = TRUE) +
+  geom_waffle(sixe = 0.1, n_rows = 10, flip = TRUE, na.rm = TRUE) +
   facet_wrap(~ fct_reorder(paste0(jurisdiction), total, .desc = TRUE), ncol = 4, strip.position = "bottom") +
   geom_text(aes(x = 5, y = 5, label = total), family = font, size = 7, color = "#FFFFFF") +
   scale_fill_manual(values = c("#390099", "#ff0054", "#ffbd00")) +
@@ -64,9 +64,9 @@ df %>%
   theme_void() +
   theme(plot.title = element_text(family = font, size = 30, hjust = 0.5, color = "#0d1821", face = "bold"),
         plot.title.position = "plot",
-        plot.subtitle = element_text(family = font, size = 9, hjust = 0.5, color = "#0d1821", lineheight = 1.3, margin = margin(t = 5)),
+        plot.subtitle = element_text(family = font, size = 9.5, hjust = 0.5, color = "#0d1821", lineheight = 1.3, margin = margin(t = 5)),
         plot.caption.position = "plot",
-        plot.caption = element_text(size = 8, family = font, color = "#0d1821", hjust = 0.5, margin = margin(t = 30)),
+        plot.caption = element_text(size = 8.5, family = font, color = "#0d1821", hjust = 0.5, margin = margin(t = 30)),
         strip.text = element_text(size = 7.5, family = font, face = "bold", color = "#0d1821", hjust = 0, vjust = 1, margin = margin(t = 3)),
         legend.position = "top",
         legend.title = element_blank(),
