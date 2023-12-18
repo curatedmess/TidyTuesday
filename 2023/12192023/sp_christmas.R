@@ -55,7 +55,7 @@
 df2 %>% 
   ggplot() +
   geom_image(aes(x = 0.6, y = 9.25, image = image), size = 0.06, by = "height", asp = 1, hjust = 0) +
-  geom_text(aes(x = 0.6, y = 8.5, label = "Average rating for Christmas specials"), family = font, size = 3, color = "#000000", hjust = 0) +
+  geom_text(aes(x = 0.6, y = 8.5, label = "Average rating for Christmas episodes"), family = font, size = 2.9, color = "#000000", hjust = 0) +
   geom_segment(aes(x = x, y = y, xend = xend, yend = yend, linewidth = average_rating), color = "#D03234") + 
   geom_richtext(aes(x = 1, y = y_mid, label = original_title), family = font, fontface = "bold", hjust = 0.5, vjust = 0.5, angle = 6.4, text.color = "#D03234", label.padding = unit(c(8, 6, 4, 6), "pt"), fill = "#FFFFFF", label.color = NA) +
   geom_text(aes(x = 1, y = y_mid + 0.35, label = year), family = font, fontface = "bold", size = 3.5, hjust = 0.5, vjust = 0.5, angle = 6.4, color = "#DDDDDD") +
