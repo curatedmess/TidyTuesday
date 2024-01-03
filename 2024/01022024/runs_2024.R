@@ -25,9 +25,9 @@ showtext_opts(dpi = 320)
 # client_id <- enter client id here
 # secret <- "enter your secret here"
 
-client_id <- 44244
+client_id <- ""
 
-secret <- "6801131f54f1f85f9651e93f6fb7659dfe0df0b6"
+secret <- ""
 
 # OAuth application -------------------------------------------------------
 app <- oauth_app("strava", client_id, secret)
