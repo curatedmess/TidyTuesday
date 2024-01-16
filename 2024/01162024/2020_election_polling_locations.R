@@ -69,7 +69,6 @@ df %>%
   annotate("text", y = 625, x = 2, label = "2020 Election Polling Locations", color = "#000000", family = font, fontface = "bold", hjust = 0, size = 4) +
   annotate("text", y = 625, x = 1.65, label = 'Counting the voting spots by numbered\n"avenues and streets" from the last major\nU.S. election (First/1st through Tenth/10th)', color = "#000000", family = font, hjust = 0, vjust = "top", size = 3.2, lineheight = 1.2) +
   coord_flip(clip = "off") +
-  # scale_x_discrete(expand = c(-3, 10)) +
   scale_y_continuous(limits = c(-35, 1200), expand = c(0, 0)) +
   theme_void() +
   theme(plot.caption = element_text(hjust = 0.5, size = 8, color = "#000000", margin = margin(t = 10)),
