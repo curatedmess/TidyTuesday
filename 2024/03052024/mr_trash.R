@@ -49,8 +49,8 @@ df %>%
   ggplot(aes(x = Date, y = total, fill = ID)) +
   geom_hline(yintercept = c(25000, 50000, 75000), linetype = "dotted") +
   geom_area(alpha = 1, color = "#000000", linewidth = 0.7) +
-  # geom_text(data = df_labels, aes(x = as.Date(Date), y = total, label = labels, angle = angle), family = font, size = 2.5, color = "#000000", hjust = 0, fontface = "bold") +
-  geom_text(aes(x = as.Date("2022-08-01"), y = 65000, label = "Peak month to\nforget how to use\nthe trash can!"), family = font2, size = 4, color = "#000000", hjust = 0, check_overlap = T) +
+  geom_text(data = df_labels, aes(x = as.Date(Date), y = total, label = labels, angle = angle), family = font, size = 2.5, color = "#000000", hjust = 0, fontface = "bold") +
+  geom_text(aes(x = as.Date("2022-08-01"), y = 65000, label = "Peak month to\nforget how to use\nthe trash can?!"), family = font2, size = 4, color = "#000000", hjust = 0, check_overlap = T) +
   annotate("curve", x = as.Date("2022-08-01"), y = 73000, xend = as.Date("2022-07-05"), yend = 78000, linewidth = 0.7,  curvature = 0.3, arrow = arrow(length = unit(1.25, "mm")), color = "#000000") +
   scale_fill_manual(values = c("#00FFFF", "#FFFF00", "#FF00FF")) +
   scale_y_continuous(limits = c(NA, 90000), breaks = c(25000, 50000, 75000), labels = scales::comma_format(scale = 1e-3, suffix = "K"), expand = c(0, 0)) +
